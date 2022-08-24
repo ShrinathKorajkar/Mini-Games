@@ -1,0 +1,57 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: url(../assets/images/snake_bg.jpg) no-repeat center;
+    background-size: 100vw 100vh;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.scoreboard{
+    position: absolute;
+    top: 30vmin;
+    right: 15vmin;
+    line-height: 5vmin;
+    font-weight: bold;
+    color: crimson;
+    text-shadow: 1px 1px 1px burlywood;
+    letter-spacing: 0.1vmin;
+    font-size: 3.5vmin;
+}
+
+.gameContainer{
+    display: grid;
+    position:relative;
+    left: 11vmin;
+    grid-template-rows: repeat(25, 1fr);
+    grid-template-columns: repeat(25, 1fr);
+    background-color: rgba(194, 133, 133, 0.963);
+    height: 80vmin;
+    width: 80vmin;
+    border: 2px solid black;
+}
+
+.snakehead{
+    background-color: rgb(0, 255, 247);
+    border-radius: 4px;
+    border: 2px solid rgb(13, 68, 13);
+}
+
+.snakebody{
+    background-color: rgb(0, 255, 30);
+    border: 2px solid rgb(41, 127, 41);
+    border-radius: 6px;
+}
+
+.food{
+    background-color: red;
+    border-radius: 50%;
+    border: 1.4px solid black;
+}

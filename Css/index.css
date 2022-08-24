@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+nav h1 {
+    list-style: none;
+    font: bold 35px sans-serif;
+}
+
+nav{
+    background-color:rgba(86, 226, 144, 0.877);
+    text-align: center;
+}
+
+body{
+   background-color: rgba(250, 235, 215, 0.585);
+}
+
+.container{
+    margin: 1rem;
+}
+
+.games{
+    display: grid;
+    align-items: center;
+    justify-content: space-evenly;
+    grid-template-columns: repeat(2,auto);
+    gap: 5rem 0;
+}
+
+a{
+    text-decoration: none;
+    color: darkblue;
+}
+
+a h2{
+    margin: 1rem 5rem;
+}
+
+.tictactoe, .furiousCar, .snakeChase{
+    width: 20rem;
+    height: 9rem;
+}
+
+@media  screen and (max-width:1000px){
+    .games{
+        grid-template-columns: repeat(1, auto);
+    }  
+}

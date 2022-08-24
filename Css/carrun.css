@@ -1,0 +1,195 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+a{
+    position: absolute;
+    text-decoration: none;
+    border: 2px solid brown;
+    background-color: rgba(215, 91, 91, 0.69);
+    padding: 2vh 4vh;
+    font-weight: bold;
+    border-radius: 41px;
+    inset: 4vh auto auto 4vw;
+    color: chartreuse;
+}
+
+a:hover{
+    background-color:brown;
+    color: white;
+}
+
+.gameContainer{
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.rightimg, .leftimg{
+    display: grid;
+    place-items: center;
+}
+
+.centerimg{
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+}
+
+.score, .heading{
+    display: grid;
+    place-items: center;
+}
+
+.heading{
+    font-weight: bold;
+    font-size: 5vmax;
+    line-height: 10vw;
+    letter-spacing: 1vw;
+    color: cyan;
+    text-shadow: 3px 3px 1px blue;
+}
+
+.score{
+    border: 2px solid blue;
+    text-decoration: wavy;
+    font-weight: bold;
+    font-size: 2vmax;
+    padding: 2vh 2vw;
+    color: rgb(13, 0, 255);
+    text-shadow: 1px 2px 2px rgb(193, 22, 73);
+    background-color: darkseagreen;
+    line-height: 3vw;
+}
+
+.gameOver{
+    visibility: hidden;
+    font-weight: bold;
+    font-size: 3vmax;
+    text-orientation: upright;
+    writing-mode: vertical-rl;
+    text-shadow: 1px 2px 1px red;
+    color: cornsilk;
+    animation : over 2s linear infinite alternate;
+}
+
+@keyframes over {
+    from{        
+        transform: translateX(-5vh);
+    }
+    to{      
+        transform: translateX(5vh);
+    }
+}
+
+.leftimg::after, .rightimg::after{
+    position: absolute;
+    content: "";
+    width: 33.33vw;
+    height: 5000vh;
+    background: url(../Assets/images/trees.jfif) repeat-y center;
+    background-size: contain;
+    opacity: 0.7;
+    z-index: -1;
+    animation: backimg 100s linear infinite;
+}
+
+@keyframes backimg {
+    from { transform: translateY(0)}
+    to { transform: translateY(300vh)}
+}
+
+.leftroad, .centerroad, .rightroad{
+    background: url(../Assets/images/roadtrack2.jfif) repeat-y center;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.car{
+    position: absolute;
+    background: url(../Assets/images/whitecar.jfif) no-repeat center;
+    background-size: contain;
+    height:12vh;
+    width: 8vw;
+    top: 65vh;
+    left: 46.2vw;
+}
+
+
+.oppcar1{
+    background: url(../Assets/images/bluecar.jpg)  no-repeat center;
+    animation: blueruncar 16s linear infinite;  
+}
+.oppcar2{
+    background: url(../Assets/images/greycar.jpg)  no-repeat center;
+    animation: greyruncar 16s linear infinite;  
+}
+.oppcar3{
+    background: url(../Assets/images/redcar.jpg)  no-repeat center;
+    animation: redruncar 22s linear infinite;  
+}
+.oppcar4{
+    background: url(../Assets/images/yellowcar.jpg)  no-repeat center;
+    animation: yellowruncar 22s linear infinite;  
+}
+
+.enemy-car{
+    position: relative;
+    background-size: contain;
+    height: 14vh;
+    /* animation-play-state: paused; */
+}
+
+@keyframes blueruncar {
+    from { top: -40vh;}
+    to { top: 100vh}
+}
+@keyframes redruncar {
+    from { top: -80vh;}
+    to { top: 100vh}
+}
+@keyframes greyruncar {
+    from { top: -140vh;}
+    to { top: 100vh}
+}
+@keyframes yellowruncar {
+    from { top: -200vh;}
+    to { top: 100vh}
+}
+
+.startstop {
+    z-index: -1;
+    display: grid;
+    place-items: center;
+    position: absolute;
+    inset: 30vh 30vw;
+}
+
+#congrats{
+    visibility: hidden;
+    text-align: center;
+    background-color:lightgray;
+    padding: 3vh 2vh;
+    font-weight: bold;
+    font-size: 3vh;
+    color: rgb(255, 25, 0);
+}
+
+#play{
+    padding: 2vh 6vh;
+    font-weight: bolder;
+    font-size: 3vh;
+    color: rgb(0, 255, 94);
+    letter-spacing:0.6vh;
+    background-color:rgba(153, 194, 161, 0.325);
+    border: 0.6vh solid green;
+    border-radius: 10px;
+}
+
+#play:hover{
+    background-color:limegreen;
+    color: white;
+}
